@@ -1,6 +1,10 @@
-function evenNumbers() {
-
+function evenNumbers(array) {
+    array.forEach(element => {
+        if (element % 2 === 0) {
+            console.log(element)
+        }
+    });
 }
 
-evenNumbers();
-// expected output 2,4,6,8,10......98
+let array = [1,2,3,4,5,6]
+evenNumbers(array)
