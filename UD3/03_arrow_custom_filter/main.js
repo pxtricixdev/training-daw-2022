@@ -1,7 +1,9 @@
 const assert = require('assert').strict;
 
 function select(array, condition) {
+
 }
+
 
 let values = [1, 2, 3, 5, 7, 13, 17, 23, 29]
 
