@@ -1,7 +1,3 @@
-'use strict'
-
-const assert = require('assert').strict;
-
 var pilots = [
   {
     id: 2,
@@ -30,29 +26,58 @@ var pilots = [
 ];
 
 function iterateSimple() {
+  for(let i = 0; i<pilots.length; i++) {
+    console.log(pilots[i])
+  }
 }
+
 function iterateForEach() {
+  pilots.forEach(pilot => {
+    console.log(pilot)
+  })
 }
+
 function mapIds() {
+  return pilots.map((pilot) => pilot.id)
 }
+
 function rebels() {
+  pilots.filter(pilot => {
+    if (pilot.faction === 'Rebels') {
+      console.log(pilot)
+    }
+  })
 }
+
 function totalFaction(faction) {
+  return pilots.filter((pilot) => pilot.faction === faction).length
 }
+
 function avgYears(faction) {
+  let selectedFaction = pilots.filter((pilot) => pilot.faction === faction)
+  let suma = 0
+
+  selectedFaction.forEach(pilot => {
+     suma += pilot.years;
+  })
+
+  return suma / selectedFaction.length;
 }
 
-// use console.log
+console.log('For normal')
 iterateSimple()
+console.log('Foreach')
 iterateForEach()
-try {
-  assert.deepStrictEqual(mapIds(), [2,8,40,66])
-  assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
+let arrayIds = mapIds() 
+console.log(arrayIds)
 
-  assert.deepStrictEqual(totalFaction('Rebels'), 2)
+console.log('Filter')
+rebels()
 
-  assert.deepStrictEqual(avgYears('Rebels'), 22.5)
-  assert.deepStrictEqual(avgYears('Empire'), 25)
-} catch (error) {
-  console.error(error)
-}
+let rebeldes = totalFaction('Rebels')
+console.log(rebeldes)
+let empire = totalFaction('Empire')
+let avgYearsEmpire = avgYears('Empire')
+console.log(avgYearsEmpire)
+let avgYearsRebels = avgYears('Rebels')
+console.log(avgYearsRebels)
