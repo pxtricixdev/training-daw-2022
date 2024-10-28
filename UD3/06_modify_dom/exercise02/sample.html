@@ -16,11 +16,11 @@ window.onload = function() {
 	// Numero de enlaces que apuntan a http://prueba
 	let cantidadEnlaces = 0;
 	for(let enlace of enlaces) {
-		enlace.href === 'http://prueba'
-		cantidadEnlaces++;
-		console.log(enlace)
+		if(enlace.href === 'http://prueba/') {
+			cantidadEnlaces++;
+		}
 	}
-	console.log('Numero de enlaces que apuntan a http://prueba = ' + cantidadEnlaces)
+	console.log('Numero de enlaces que apuntan a http://prueba/ = ' + cantidadEnlaces)
 	
 	// Numero de enlaces del tercer párrafo
 	let cantidadEnlacesTercerParrafo = 0;
