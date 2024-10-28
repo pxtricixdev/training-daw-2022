@@ -24,4 +24,18 @@ window.onload = function(e) {
     //6
     const primerParrafo = document.querySelectorAll('p')[0]
     primerParrafo.style['background-color'] = 'pink'
+
+    let firstArticle = document.querySelector('article')
+    let node = document.createElement('p')
+    node.innerText = 'Hola mundo añadiendo nodos desde el DOM'
+    node.style.color = 'green'
+    node.attributes.title = 'Parrafo de ejemplo'
+
+    let aNode = document.createElement('a')
+    aNode.innerText = 'Enlace de ejemplo'
+    aNode.href = 'https://www.google.es'
+    aNode.className = 'enlaces'
+    node.appendChild(aNode)
+    
+    firstArticle.insertBefore(node, firstArticle.childNodes[2])
 }
