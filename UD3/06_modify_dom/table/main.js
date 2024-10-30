@@ -1,9 +1,11 @@
+let counter = 1;
+
 function onClick() {
     let tbody = document.getElementsByTagName('tbody')[0]
 
     let tr = document.createElement('tr')
     let td = document.createElement('td')
-    td.innerText = '0'
+    td.innerText = counter++;
     tr.appendChild(td)
 
     td = document.createElement('td')
@@ -16,4 +18,5 @@ function onClick() {
 
     tbody.appendChild(tr)
     console.log('add')
+
 }
