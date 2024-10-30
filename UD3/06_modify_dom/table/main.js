@@ -16,6 +16,10 @@ function onClick() {
     td.innerText = 'Surname'
     tr.appendChild(td)
 
+    td = document.createElement('td')
+    td.innerText = 'http://localhost/edit/'
+    tr.appendChild(td)
+
     tbody.appendChild(tr)
     console.log('add')
 
