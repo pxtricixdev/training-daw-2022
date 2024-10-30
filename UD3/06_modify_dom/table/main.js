@@ -5,7 +5,7 @@ function onClick() {
 
     let tr = document.createElement('tr')
     let td = document.createElement('td')
-    td.innerText = counter++;
+    td.innerText = counter;
     tr.appendChild(td)
 
     td = document.createElement('td')
@@ -16,9 +16,14 @@ function onClick() {
     td.innerText = 'Surname'
     tr.appendChild(td)
 
-    td = document.createElement('td')
-    td.innerText = 'http://localhost/edit/'
-    tr.appendChild(td)
+    td = document.createElement('td');
+    let link = document.createElement('a');
+    link.innerText = `http://localhost/edit/${counter}`
+    link.href = `http://localhost/edit/${counter}`; 
+    td.appendChild(link);
+    tr.appendChild(td);
+
+    counter++;
 
     tbody.appendChild(tr)
     console.log('add')
