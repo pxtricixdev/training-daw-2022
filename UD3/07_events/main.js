@@ -1,14 +1,17 @@
-window.onload = function(e) {
-    console.log('documento cargado')
+window.onload = function() {
+    console.log('documento cargado');
 
-}
-
-function onClick() {
-    const enlaces = document.querySelectorAll('p')
-    console.log(enlaces)
+    const enlaces = document.querySelectorAll('a');
 
     for (let enlace of enlaces) {
-        enlace.style.display = "none"
-    }
+        enlace.addEventListener('click', () => {
+            const parrafo = enlace.previousElementSibling;
 
-}
+            if (parrafo.style.display === 'none') {
+                parrafo.style.display = 'block';
+            } else {
+                parrafo.style.display = 'none';
+            }
+        });
+    }
+};
